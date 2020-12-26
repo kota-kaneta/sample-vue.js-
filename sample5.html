@@ -1,0 +1,17 @@
+<div id="app">
+  <p v-if="top">トップページ</p>
+  <p v-if="out_service">現在は営業時間外です</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script>
+  let today = new Date();
+  let hour = today.getHours();
+  let app = new Vue({
+    el: "#app", 
+    data: {
+      out_service: (hour > 20),
+      top: (hour > 20)
+    }
+  }) 
+</script>
