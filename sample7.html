@@ -1,0 +1,15 @@
+<div id="app">
+  <ul v-for="week of weeks" :key="week">
+    <li>{{ week }}</li>
+  </ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script>
+  let app = new Vue({
+    el: "#app",
+    data: {
+      weeks: ['日','月','火','水','木','金','土']
+    }
+  })
+</script>
