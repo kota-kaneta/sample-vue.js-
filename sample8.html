@@ -1,0 +1,18 @@
+<div id="app">
+  <button @click="checkClick" :disabled="clicked">決済する</button>
+</div>
+<!-- @ = v-on -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script>
+  let app = new Vue({
+    el: "#app", 
+    data: {
+      clicked: false,
+    },
+    methods: {
+      checkClick: function(){
+        this.clicked = true
+      }
+    }
+  }) 
+</script>
