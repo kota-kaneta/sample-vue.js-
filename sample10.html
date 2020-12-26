@@ -1,0 +1,28 @@
+<div id="app">
+  <clock></clock>
+  <clock style="color: blue">現在時刻</clock>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script>
+  Vue.component('clock',{
+    data: function () {
+        return {
+            time: ''
+        } 
+    },
+    mounted: function() {
+        let timerID = setInterval(this.refresh, 1000);
+    },
+    methods: {
+      refresh: function(){
+        let now = new Date();
+        this.time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+      }
+    },
+    template: `<div :style=""><h2><slot>時計</slot></h2>{{time}}</div>`
+  })
+  let app = new Vue({
+    el: "#app"
+  })
+</script>
