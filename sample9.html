@@ -1,0 +1,24 @@
+<div id="app">
+  <date></date>
+  <date></date>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script>
+  Vue.component('date',{
+    data: function(){
+      return{
+        today: ''
+      }
+    },
+    mounted: function(){
+      const now = new Date();
+      this.today = `${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日`;
+    },
+    template: '<div>{{today}}</div>'
+  })
+
+  let app = new Vue({
+    el: "#app",
+  })
+</script>
